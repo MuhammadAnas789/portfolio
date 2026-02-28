@@ -52,7 +52,8 @@ export default function Navbar() {
           ))}
           <a
             href="/resume.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm px-4 py-1.5 rounded border border-[#2dd4bf] text-[#2dd4bf] hover:bg-[#2dd4bf]/10 transition-colors"
           >
             Resume
@@ -99,7 +100,8 @@ export default function Navbar() {
             ))}
             <a
               href="/resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMenu}
               className="text-sm px-4 py-2 rounded border border-[#2dd4bf] text-[#2dd4bf] hover:bg-[#2dd4bf]/10 transition-colors text-center"
             >

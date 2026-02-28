@@ -34,9 +34,14 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="text-[#f1f5f9] font-bold text-lg tracking-tight hover:text-[#2dd4bf] transition-colors"
+          className="group flex items-center gap-0.5 select-none"
         >
-          MA<span className="text-[#2dd4bf]">.</span>
+          <span className="text-[#2dd4bf] font-bold text-xl tracking-tighter font-mono transition-all duration-200 group-hover:text-white">
+            MA
+          </span>
+          <span className="text-[#2dd4bf] font-bold text-xl font-mono transition-all duration-200 group-hover:opacity-60">
+            .
+          </span>
         </a>
 
         {/* Desktop nav */}

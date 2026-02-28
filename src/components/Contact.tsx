@@ -66,7 +66,7 @@ export default function Contact() {
         >
           <a
             href="mailto:manas2k00@gmail.com"
-            className="flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#1e293b] border border-[#334155]/50 text-[#94a3b8] hover:border-[#2dd4bf]/60 hover:text-[#2dd4bf] hover:bg-[#2dd4bf]/5 transition-all duration-200"
+            className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#2dd4bf]/30 text-[#2dd4bf] hover:bg-[#2dd4bf]/10 transition-colors duration-200"
           >
             <Mail className="w-4 h-4 shrink-0" />
             manas2k00@gmail.com
@@ -75,7 +75,7 @@ export default function Contact() {
             href="https://linkedin.com/in/muhammadanas2k00"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2.5 px-6 py-3 rounded-full bg-[#1e293b] border border-[#334155]/50 text-[#94a3b8] hover:border-[#2dd4bf]/60 hover:text-[#2dd4bf] hover:bg-[#2dd4bf]/5 transition-all duration-200"
+            className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-[#2dd4bf]/30 text-[#2dd4bf] hover:bg-[#2dd4bf]/10 transition-colors duration-200"
           >
             <Linkedin className="w-4 h-4 shrink-0" />
             LinkedIn

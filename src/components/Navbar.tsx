@@ -54,12 +54,11 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="group flex items-center gap-0.5 select-none">
-          <span className="text-[#2dd4bf] font-bold text-xl tracking-tighter font-mono transition-all duration-200 group-hover:text-white">
-            MA
-          </span>
-          <span className="text-[#2dd4bf] font-bold text-xl font-mono transition-all duration-200 group-hover:opacity-60">
-            .
+        <a href="#hero" className="group select-none">
+          <span className="font-mono font-bold text-xl">
+            <span className="text-[#94a3b8] group-hover:text-[#2dd4bf] transition-colors duration-200">&lt;</span>
+            <span className="text-[#2dd4bf]">MA</span>
+            <span className="text-[#94a3b8] group-hover:text-[#2dd4bf] transition-colors duration-200">/&gt;</span>
           </span>
         </a>
 
@@ -72,10 +71,10 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors duration-200 ${
+                className={`text-sm transition-all duration-200 ${
                   isActive
-                    ? "text-[#2dd4bf]"
-                    : "text-[#94a3b8] hover:text-[#f1f5f9]"
+                    ? "text-[#2dd4bf] border-b-2 border-[#2dd4bf] pb-0.5"
+                    : "text-[#94a3b8] hover:text-[#f1f5f9] border-b-2 border-transparent pb-0.5"
                 }`}
               >
                 {link.label}

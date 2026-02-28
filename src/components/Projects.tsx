@@ -41,11 +41,12 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-8 h-px bg-[#2dd4bf]" />
-          <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="h-px w-8 bg-teal-400"></span>
+          <span className="text-teal-400 text-sm font-mono uppercase tracking-widest">
             What I&apos;ve Built
-          </p>
+          </span>
+          <span className="h-px w-8 bg-teal-400"></span>
         </div>
         <h2 className="text-3xl font-bold text-[#f1f5f9]">Projects</h2>
       </motion.div>
@@ -58,10 +59,10 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group relative flex flex-col bg-[#1e293b] rounded-xl border-t-2 border-t-[#2dd4bf] border border-[#334155]/50 p-6 min-h-[320px] hover:border-[#2dd4bf]/50 hover:shadow-[0_0_30px_-5px_#2dd4bf20] transition-all duration-300"
+            className="group relative flex flex-col bg-[#1e293b] rounded-xl border-t-2 border-t-[#2dd4bf]/50 border border-[#334155]/50 p-6 min-h-[320px] hover:border-[#2dd4bf] hover:shadow-lg hover:shadow-teal-400/10 transition-all duration-300"
           >
             {/* Decorative number */}
-            <span className="absolute top-4 right-5 text-4xl font-bold text-[#334155]/40 font-mono group-hover:text-[#2dd4bf]/20 transition-colors duration-300 select-none">
+            <span className="absolute top-4 right-4 text-6xl font-bold text-slate-800 select-none">
               {cardNumbers[i]}
             </span>
 

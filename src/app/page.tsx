@@ -20,7 +20,7 @@ export default function Home() {
         <Education />
         <Contact />
       </main>
-      <footer className="py-8 text-center text-[#94a3b8] text-sm border-t border-[#334155]/30">
+      <footer className="py-8 text-center text-[#94a3b8] text-sm border-t border-slate-800">
         <p>
           © {new Date().getFullYear()} Designed & built by{" "}
           <span className="text-[#2dd4bf]">Muhammad Anas</span>

@@ -49,16 +49,17 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-8 h-px bg-[#2dd4bf]" />
-            <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-teal-400"></span>
+            <span className="text-teal-400 text-sm font-mono uppercase tracking-widest">
               What I Work With
-            </p>
+            </span>
+            <span className="h-px w-8 bg-teal-400"></span>
           </div>
           <h2 className="text-3xl font-bold text-[#f1f5f9]">Skills</h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {skillGroups.map((group, i) => (
             <motion.div
               key={group.category}
@@ -67,8 +68,7 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
             >
-              <h3 className="text-xs font-mono text-[#2dd4bf] tracking-widest uppercase mb-3 flex items-center gap-2">
-                <span className="w-4 h-px bg-[#2dd4bf]/50" />
+              <h3 className="text-teal-400 font-mono text-sm uppercase tracking-widest mb-3">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -80,7 +80,7 @@ export default function Skills() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={pillVariants}
-                    className="text-sm px-3 py-1.5 rounded-md bg-[#0f172a] border border-[#334155]/60 text-[#94a3b8] hover:bg-[#2dd4bf] hover:text-[#0f172a] hover:border-[#2dd4bf] transition-all duration-200 cursor-default font-medium"
+                    className="text-sm px-3 py-1.5 rounded-md bg-[#0f172a] border border-[#334155]/60 text-[#94a3b8] hover:bg-teal-400 hover:text-slate-900 hover:border-teal-400 transition-colors duration-200 cursor-default font-medium"
                   >
                     {skill}
                   </motion.span>

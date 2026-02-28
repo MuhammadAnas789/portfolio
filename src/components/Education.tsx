@@ -13,11 +13,12 @@ export default function Education() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-8 h-px bg-[#2dd4bf]" />
-          <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="h-px w-8 bg-teal-400"></span>
+          <span className="text-teal-400 text-sm font-mono uppercase tracking-widest">
             Academic Background
-          </p>
+          </span>
+          <span className="h-px w-8 bg-teal-400"></span>
         </div>
         <h2 className="text-3xl font-bold text-[#f1f5f9]">Education</h2>
       </motion.div>

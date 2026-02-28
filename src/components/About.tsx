@@ -37,11 +37,12 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-8 h-px bg-[#2dd4bf]" />
-          <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="h-px w-8 bg-teal-400"></span>
+          <span className="text-teal-400 text-sm font-mono uppercase tracking-widest">
             About Me
-          </p>
+          </span>
+          <span className="h-px w-8 bg-teal-400"></span>
         </div>
         <h2 className="text-3xl font-bold text-[#f1f5f9]">A bit about myself</h2>
       </motion.div>
@@ -79,18 +80,18 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              whileHover={{ y: -2 }}
-              className="flex items-start gap-5 p-5 rounded-lg bg-[#1e293b] border-t-2 border-t-[#2dd4bf] border border-[#334155]/40 hover:border-[#2dd4bf]/30 transition-all duration-200 cursor-default"
+              whileHover={{ y: -4 }}
+              className="p-6 rounded-lg bg-slate-800/50 backdrop-blur-sm border-t-2 border-teal-400 hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 cursor-default"
             >
               <div>
-                <span className="text-4xl font-bold text-[#f1f5f9] tabular-nums">
+                <span className="text-4xl font-bold text-teal-400 tabular-nums">
                   {stat.numericValue !== null ? (
                     <AnimatedNumber target={stat.numericValue} />
                   ) : (
                     stat.value
                   )}
                 </span>
-                <p className="text-[#2dd4bf] font-semibold text-sm mt-0.5">{stat.label}</p>
+                <p className="text-sm text-slate-400 uppercase tracking-wide mt-2">{stat.label}</p>
                 <p className="text-[#94a3b8] text-xs mt-1">{stat.sub}</p>
               </div>
             </motion.div>

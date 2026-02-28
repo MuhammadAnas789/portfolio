@@ -54,80 +54,101 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group">
-          {/* Geometric mark */}
-          <div className="relative w-8 h-8 flex-shrink-0">
+        <a href="#hero" className="flex items-center gap-3 group select-none">
+          {/* Premium geometric icon */}
+          <div className="relative">
             <svg 
-              viewBox="0 0 32 32" 
+              viewBox="0 0 40 40" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full"
+              className="w-10 h-10"
             >
-              {/* Container */}
+              {/* Background with gradient on hover */}
               <rect 
-                width="32" 
-                height="32" 
-                rx="4" 
-                fill="#0f172a" 
+                width="40" 
+                height="40" 
+                rx="8" 
+                fill="#0f172a"
+                className="group-hover:fill-[#1e293b] transition-all duration-300"
+              />
+              
+              {/* Border with glow effect */}
+              <rect 
+                x="0.75" 
+                y="0.75" 
+                width="38.5" 
+                height="38.5" 
+                rx="7.25" 
                 stroke="#2dd4bf" 
                 strokeWidth="1.5"
+                className="group-hover:stroke-[#5eead4] transition-all duration-300"
               />
-              {/* Letter M */}
+              
+              {/* M letter - custom geometric design */}
               <path 
-                d="M6 22V10L11 17L16 10V22" 
+                d="M10 26V14L14 22L18 14V26" 
                 stroke="#2dd4bf" 
-                strokeWidth="1.8" 
+                strokeWidth="2.2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round"
-                fill="none"
+                className="group-hover:stroke-white transition-all duration-300"
               />
-              {/* Letter A */}
+              
+              {/* A letter - custom geometric design */}
               <path 
-                d="M18 22L21 10L24 22" 
+                d="M22 26L26 14L30 26M23.5 22H28.5" 
                 stroke="#2dd4bf" 
-                strokeWidth="1.8" 
+                strokeWidth="2.2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round"
-                fill="none"
+                className="group-hover:stroke-white transition-all duration-300"
               />
-              <path 
-                d="M19.5 18H22.5" 
-                stroke="#2dd4bf" 
-                strokeWidth="1.8" 
-                strokeLinecap="round"
-              />
-              {/* Subtle corner accent */}
-              <rect 
-                x="0" y="0" 
-                width="6" height="2" 
-                rx="1" 
+              
+              {/* Subtle corner accent - top right */}
+              <circle 
+                cx="32" 
+                cy="8" 
+                r="1.5" 
                 fill="#2dd4bf" 
-                opacity="0.6"
+                opacity="0.4"
+                className="group-hover:opacity-100 transition-opacity duration-300"
               />
-              <rect 
-                x="0" y="0" 
-                width="2" height="6" 
-                rx="1" 
+              
+              {/* Bottom left accent */}
+              <circle 
+                cx="8" 
+                cy="32" 
+                r="1.5" 
                 fill="#2dd4bf" 
-                opacity="0.6"
+                opacity="0.4"
+                className="group-hover:opacity-100 transition-opacity duration-300"
               />
             </svg>
-            {/* Hover glow effect */}
-            <div className="absolute inset-0 rounded opacity-0 
-              group-hover:opacity-100 transition-opacity duration-300"
+            
+            {/* Subtle outer glow on hover */}
+            <div 
+              className="absolute inset-0 rounded-lg opacity-0 
+                group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
               style={{ 
-                boxShadow: '0 0 12px rgba(45, 212, 191, 0.4)' 
+                boxShadow: '0 0 20px rgba(45, 212, 191, 0.3), 0 0 40px rgba(45, 212, 191, 0.1)' 
               }} 
             />
           </div>
 
-          {/* Wordmark — optional, shown only on larger screens */}
-          <span className="hidden sm:block font-mono text-sm 
-            font-semibold text-slate-300 
-            group-hover:text-teal-400 
-            transition-colors duration-300">
-            manas
-          </span>
+          {/* Refined wordmark */}
+          <div className="hidden sm:flex flex-col -space-y-0.5">
+            <span className="font-bold text-base tracking-tight text-slate-100 
+              group-hover:text-transparent group-hover:bg-clip-text 
+              group-hover:bg-gradient-to-r group-hover:from-teal-300 group-hover:via-teal-400 group-hover:to-cyan-400
+              transition-all duration-300">
+              Muhammad Anas
+            </span>
+            <span className="text-[10px] font-mono text-slate-500 
+              group-hover:text-teal-400/70 
+              transition-colors duration-300 tracking-widest uppercase">
+              Software Engineer
+            </span>
+          </div>
         </a>
 
         {/* Desktop nav */}

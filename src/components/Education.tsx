@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GraduationCap } from "lucide-react";
 
 export default function Education() {
   return (
@@ -12,10 +13,13 @@ export default function Education() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <p className="text-[#2dd4bf] text-sm font-mono tracking-widest uppercase mb-2">
-          Academic Background
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#f1f5f9]">Education</h2>
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-8 h-px bg-[#2dd4bf]" />
+          <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+            Academic Background
+          </p>
+        </div>
+        <h2 className="text-3xl font-bold text-[#f1f5f9]">Education</h2>
       </motion.div>
 
       <motion.div
@@ -28,24 +32,11 @@ export default function Education() {
         <div className="flex items-start gap-5">
           {/* Icon */}
           <div className="w-12 h-12 rounded-lg bg-[#2dd4bf]/10 border border-[#2dd4bf]/20 flex items-center justify-center shrink-0">
-            <svg
-              className="w-6 h-6 text-[#2dd4bf]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              />
-            </svg>
+            <GraduationCap className="w-6 h-6 text-[#2dd4bf]" />
           </div>
 
           <div>
-            <h3 className="text-[#f1f5f9] font-semibold text-xl">
+            <h3 className="text-[#f1f5f9] font-bold text-xl">
               Bachelor of Computer Science
             </h3>
             <p className="text-[#2dd4bf] font-medium mt-1">Namal University</p>

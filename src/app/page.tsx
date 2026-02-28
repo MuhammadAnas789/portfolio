@@ -22,7 +22,7 @@ export default function Home() {
       </main>
       <footer className="py-8 text-center text-[#94a3b8] text-sm border-t border-[#334155]/30">
         <p>
-          Designed & built by{" "}
+          © {new Date().getFullYear()} Designed & built by{" "}
           <span className="text-[#2dd4bf]">Muhammad Anas</span>
         </p>
       </footer>

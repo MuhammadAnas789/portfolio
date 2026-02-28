@@ -29,6 +29,8 @@ const projects = [
   },
 ];
 
+const cardNumbers = ["01", "02", "03"];
+
 export default function Projects() {
   return (
     <section id="projects" className="py-24 max-w-6xl mx-auto px-6">
@@ -39,10 +41,13 @@ export default function Projects() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <p className="text-[#2dd4bf] text-sm font-mono tracking-widest uppercase mb-2">
-          What I&apos;ve Built
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#f1f5f9]">Projects</h2>
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-8 h-px bg-[#2dd4bf]" />
+          <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+            What I&apos;ve Built
+          </p>
+        </div>
+        <h2 className="text-3xl font-bold text-[#f1f5f9]">Projects</h2>
       </motion.div>
 
       <div className="grid md:grid-cols-3 gap-6">
@@ -53,14 +58,19 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group flex flex-col bg-[#1e293b] rounded-xl border border-[#334155]/50 p-6 hover:border-[#2dd4bf]/50 transition-all duration-300 hover:shadow-[0_0_30px_-5px_#2dd4bf15]"
+            className="group relative flex flex-col bg-[#1e293b] rounded-xl border-t-2 border-t-[#2dd4bf] border border-[#334155]/50 p-6 min-h-[320px] hover:border-[#2dd4bf]/50 hover:shadow-[0_0_30px_-5px_#2dd4bf20] transition-all duration-300"
           >
+            {/* Decorative number */}
+            <span className="absolute top-4 right-5 text-4xl font-bold text-[#334155]/40 font-mono group-hover:text-[#2dd4bf]/20 transition-colors duration-300 select-none">
+              {cardNumbers[i]}
+            </span>
+
             {/* Tech badges */}
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-5 pr-10">
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="text-xs px-2.5 py-1 rounded-full bg-[#2dd4bf]/10 text-[#2dd4bf] border border-[#2dd4bf]/20 font-mono"
+                  className="text-xs px-2.5 py-1 rounded-full bg-[#2dd4bf]/10 text-[#2dd4bf] border border-[#2dd4bf]/20 font-mono hover:bg-[#2dd4bf]/20 transition-colors"
                 >
                   {t}
                 </span>
@@ -79,7 +89,6 @@ export default function Projects() {
                 </li>
               ))}
             </ul>
-
           </motion.div>
         ))}
       </div>

@@ -17,31 +17,54 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated background glow */}
+      {/* Background — layered orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#2dd4bf]/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-[#2dd4bf]/3 blur-3xl" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#2dd4bf]/[0.06] blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[#2dd4bf]/[0.04] blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] rounded-full bg-[#2dd4bf]/[0.03] blur-3xl" />
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#94a3b8 1px, transparent 1px), linear-gradient(90deg, #94a3b8 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.p
+        {/* Eyebrow label */}
+        <motion.div
           custom={0}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="text-[#2dd4bf] text-sm font-mono tracking-widest uppercase mb-4"
+          className="inline-flex items-center gap-2 mb-6"
         >
-          Hi, I&apos;m
-        </motion.p>
+          <span className="text-[#2dd4bf]/50 font-mono text-sm">[</span>
+          <span className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+            Software Engineer
+          </span>
+          <span className="text-[#2dd4bf]/50 font-mono text-sm">]</span>
+        </motion.div>
 
+        {/* Name + blinking cursor */}
         <motion.h1
           custom={0.1}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="text-5xl sm:text-7xl font-bold text-[#f1f5f9] leading-tight mb-4"
+          className="text-6xl sm:text-7xl md:text-8xl font-bold text-[#f1f5f9] leading-tight mb-4 flex items-center justify-center gap-2 flex-wrap"
         >
           Muhammad Anas
+          <motion.span
+            animate={{ opacity: [1, 1, 0, 0] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear", times: [0, 0.5, 0.5, 1] }}
+            className="text-[#2dd4bf] font-light"
+          >
+            |
+          </motion.span>
         </motion.h1>
 
         <motion.h2
@@ -72,17 +95,19 @@ export default function Hero() {
           variants={fadeUp}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
+          {/* Primary CTA */}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 rounded-lg bg-[#2dd4bf] text-[#0f172a] font-semibold hover:bg-[#2dd4bf]/90 transition-colors"
+            className="px-8 py-3 rounded-lg bg-[#2dd4bf] text-[#0f172a] font-semibold hover:bg-[#2dd4bf]/90 active:scale-95 transition-all duration-200 shadow-[0_0_20px_-4px_#2dd4bf66]"
           >
             View Resume
           </a>
+          {/* Ghost CTA */}
           <a
             href="#contact"
-            className="px-8 py-3 rounded-lg border border-[#334155] text-[#f1f5f9] hover:border-[#2dd4bf] hover:text-[#2dd4bf] transition-colors"
+            className="px-8 py-3 rounded-lg border border-[#2dd4bf]/40 text-[#f1f5f9] hover:border-[#2dd4bf] hover:text-[#2dd4bf] hover:bg-[#2dd4bf]/5 active:scale-95 transition-all duration-200"
           >
             Contact Me
           </a>
@@ -93,11 +118,15 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#94a3b8]"
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#94a3b8]/60"
       >
         <span className="text-xs tracking-widest uppercase font-mono">Scroll</span>
-        <div className="w-0.5 h-8 bg-gradient-to-b from-[#94a3b8] to-transparent" />
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-0.5 h-8 bg-gradient-to-b from-[#2dd4bf]/40 to-transparent rounded-full"
+        />
       </motion.div>
     </section>
   );

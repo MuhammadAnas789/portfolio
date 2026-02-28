@@ -8,7 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://muhammadanas.dev"),
+  metadataBase: new URL("https://manas-engineer.vercel.app"),
   title: "Muhammad Anas — Software Engineer",
   description:
     "Full-stack engineer with production experience across Laravel, Vue.js, and Next.js. Building scalable APIs, real-time systems, and complete frontend applications.",

@@ -54,11 +54,79 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="group flex items-center select-none">
-          <span className="font-mono font-bold text-xl">
-            <span className="text-slate-400 group-hover:text-teal-400 transition-colors duration-200">&lt;</span>
-            <span className="text-teal-400">MA</span>
-            <span className="text-slate-400 group-hover:text-teal-400 transition-colors duration-200">/&gt;</span>
+        <a href="#hero" className="flex items-center gap-2 group">
+          {/* Geometric mark */}
+          <div className="relative w-8 h-8 flex-shrink-0">
+            <svg 
+              viewBox="0 0 32 32" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+            >
+              {/* Container */}
+              <rect 
+                width="32" 
+                height="32" 
+                rx="4" 
+                fill="#0f172a" 
+                stroke="#2dd4bf" 
+                strokeWidth="1.5"
+              />
+              {/* Letter M */}
+              <path 
+                d="M6 22V10L11 17L16 10V22" 
+                stroke="#2dd4bf" 
+                strokeWidth="1.8" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                fill="none"
+              />
+              {/* Letter A */}
+              <path 
+                d="M18 22L21 10L24 22" 
+                stroke="#2dd4bf" 
+                strokeWidth="1.8" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                fill="none"
+              />
+              <path 
+                d="M19.5 18H22.5" 
+                stroke="#2dd4bf" 
+                strokeWidth="1.8" 
+                strokeLinecap="round"
+              />
+              {/* Subtle corner accent */}
+              <rect 
+                x="0" y="0" 
+                width="6" height="2" 
+                rx="1" 
+                fill="#2dd4bf" 
+                opacity="0.6"
+              />
+              <rect 
+                x="0" y="0" 
+                width="2" height="6" 
+                rx="1" 
+                fill="#2dd4bf" 
+                opacity="0.6"
+              />
+            </svg>
+            {/* Hover glow effect */}
+            <div className="absolute inset-0 rounded opacity-0 
+              group-hover:opacity-100 transition-opacity duration-300"
+              style={{ 
+                boxShadow: '0 0 12px rgba(45, 212, 191, 0.4)' 
+              }} 
+            />
+          </div>
+
+          {/* Wordmark — optional, shown only on larger screens */}
+          <span className="hidden sm:block font-mono text-sm 
+            font-semibold text-slate-300 
+            group-hover:text-teal-400 
+            transition-colors duration-300">
+            manas
           </span>
         </a>
 

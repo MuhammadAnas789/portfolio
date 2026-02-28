@@ -42,7 +42,6 @@ export default function About() {
           <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
             About Me
           </p>
-          <div className="w-8 h-px bg-[#2dd4bf]" />
         </div>
         <h2 className="text-3xl font-bold text-[#f1f5f9]">A bit about myself</h2>
       </motion.div>
@@ -81,17 +80,17 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
               whileHover={{ y: -2 }}
-              className="flex items-start gap-5 p-6 rounded-lg bg-[#1e293b] backdrop-blur-sm border-t-2 border-t-[#2dd4bf] border border-[#334155]/40 hover:border-[#2dd4bf]/30 transition-all duration-200 cursor-default"
+              className="flex items-start gap-5 p-5 rounded-lg bg-[#1e293b] border-t-2 border-t-[#2dd4bf] border border-[#334155]/40 hover:border-[#2dd4bf]/30 transition-all duration-200 cursor-default"
             >
               <div>
-                <span className="text-4xl font-bold text-[#2dd4bf] tabular-nums">
+                <span className="text-4xl font-bold text-[#f1f5f9] tabular-nums">
                   {stat.numericValue !== null ? (
                     <AnimatedNumber target={stat.numericValue} />
                   ) : (
                     stat.value
                   )}
                 </span>
-                <p className="text-[#94a3b8] text-sm uppercase tracking-wide mt-0.5">{stat.label}</p>
+                <p className="text-[#2dd4bf] font-semibold text-sm mt-0.5">{stat.label}</p>
                 <p className="text-[#94a3b8] text-xs mt-1">{stat.sub}</p>
               </div>
             </motion.div>

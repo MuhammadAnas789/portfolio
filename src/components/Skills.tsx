@@ -54,12 +54,11 @@ export default function Skills() {
             <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
               What I Work With
             </p>
-            <div className="w-8 h-px bg-[#2dd4bf]" />
           </div>
           <h2 className="text-3xl font-bold text-[#f1f5f9]">Skills</h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillGroups.map((group, i) => (
             <motion.div
               key={group.category}

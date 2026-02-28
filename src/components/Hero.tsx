@@ -17,22 +17,18 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background — orbs + dot grid */}
+      {/* Background — layered orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Teal orb — top-left */}
-        <div className="absolute -top-20 -left-20 w-[600px] h-[600px] rounded-full bg-[#2dd4bf]/[0.06] blur-3xl" />
-        {/* Purple orb — bottom-right */}
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-[#7c3aed]/[0.05] blur-3xl" />
-        {/* Dot grid with radial fade */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#2dd4bf]/[0.06] blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[#2dd4bf]/[0.04] blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] rounded-full bg-[#2dd4bf]/[0.03] blur-3xl" />
+        {/* Subtle grid */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: "radial-gradient(#1e293b 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
-            maskImage:
-              "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
+            backgroundImage:
+              "linear-gradient(#94a3b8 1px, transparent 1px), linear-gradient(90deg, #94a3b8 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
         />
       </div>
@@ -53,38 +49,36 @@ export default function Hero() {
           <span className="text-[#2dd4bf]/50 font-mono text-sm">]</span>
         </motion.div>
 
-        {/* Name — per-word staggered reveal */}
-        <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-[#f1f5f9] leading-tight mb-4 flex items-center justify-center gap-[0.3em] flex-wrap">
-          {["Muhammad", "Anas"].map((word, i) => (
-            <motion.span
-              key={word}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.1 + i * 0.15,
-                ease: [0.22, 1, 0.36, 1] as const,
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </h1>
-
-        {/* Title + blinking cursor */}
-        <motion.h2
-          custom={0.4}
+        {/* Name + blinking cursor */}
+        <motion.h1
+          custom={0.1}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="text-2xl sm:text-3xl font-semibold text-[#2dd4bf] mb-6 inline-flex items-center"
+          className="text-6xl sm:text-7xl md:text-8xl font-bold text-[#f1f5f9] leading-tight mb-4 flex items-center justify-center gap-2 flex-wrap"
+        >
+          Muhammad Anas
+          <motion.span
+            animate={{ opacity: [1, 1, 0, 0] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear", times: [0, 0.5, 0.5, 1] }}
+            className="text-[#2dd4bf] font-light"
+          >
+            |
+          </motion.span>
+        </motion.h1>
+
+        <motion.h2
+          custom={0.2}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="text-2xl sm:text-3xl font-semibold text-[#2dd4bf] mb-6"
         >
           Software Engineer
-          <span className="inline-block w-0.5 h-6 bg-[#2dd4bf] ml-2 animate-pulse" />
         </motion.h2>
 
         <motion.p
-          custom={0.55}
+          custom={0.3}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
@@ -95,7 +89,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          custom={0.7}
+          custom={0.4}
           initial="hidden"
           animate="visible"
           variants={fadeUp}

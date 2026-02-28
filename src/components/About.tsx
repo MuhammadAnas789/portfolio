@@ -6,7 +6,7 @@ const stats = [
   {
     value: "3",
     label: "Roles",
-    sub: "Across startups & product teams",
+    sub: "Across one focused company",
   },
   {
     value: "3",
@@ -47,20 +47,17 @@ export default function About() {
           className="space-y-4 text-[#94a3b8] leading-relaxed"
         >
           <p>
-            I&apos;m a full-stack software engineer with a track record of building
-            production-grade web applications from the ground up. I specialize in
-            Node.js, React, and Python ecosystems — comfortable across the entire
-            stack from database schema to polished UI.
+            I&apos;m a software engineer with a strong backend foundation and full-stack
+            delivery experience across Laravel, Vue.js, and Next.js. At SystemsD,
+            I&apos;ve built and shipped production systems across multiple client
+            products — from a marketplace platform serving 500–1,000 active clients,
+            to a shipping analytics dashboard built entirely from scratch, to a
+            multi-tenant AI voice SaaS with real-time WebSocket infrastructure.
           </p>
           <p>
-            I&apos;ve worked across fintech, e-commerce, and SaaS domains, contributing
-            to platforms that serve hundreds to thousands of users. I care deeply about
-            clean architecture, performance, and writing code that teams can
-            confidently maintain and extend.
-          </p>
-          <p>
-            When I&apos;m not engineering, I&apos;m exploring new tools, contributing to
-            side projects, or digging into system design concepts to sharpen my craft.
+            I care about clean architecture, reliable APIs, and writing code that holds
+            up in production. Most of my work sits at the intersection of backend
+            design and real product impact.
           </p>
         </motion.div>
 

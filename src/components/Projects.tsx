@@ -80,26 +80,6 @@ export default function Projects() {
               ))}
             </ul>
 
-            {/* Project number */}
-            <div className="mt-5 pt-4 border-t border-[#334155]/50 flex justify-between items-center">
-              <span className="text-xs font-mono text-[#334155] group-hover:text-[#2dd4bf]/40 transition-colors">
-                Project 0{i + 1}
-              </span>
-              <div className="flex gap-1">
-                {[...Array(3)].map((_, k) => (
-                  <div
-                    key={k}
-                    className={`w-1 h-1 rounded-full ${
-                      k === 0
-                        ? "bg-[#2dd4bf]"
-                        : k === 1
-                        ? "bg-[#2dd4bf]/60"
-                        : "bg-[#2dd4bf]/30"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
           </motion.div>
         ))}
       </div>

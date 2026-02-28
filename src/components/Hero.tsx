@@ -51,7 +51,7 @@ export default function Hero() {
           variants={fadeUp}
           className="text-2xl sm:text-3xl font-semibold text-[#2dd4bf] mb-6"
         >
-          Full-Stack Software Engineer
+          Software Engineer
         </motion.h2>
 
         <motion.p
@@ -61,8 +61,8 @@ export default function Hero() {
           variants={fadeUp}
           className="text-[#94a3b8] text-lg max-w-2xl mx-auto leading-relaxed mb-10"
         >
-          I build scalable web applications and APIs that power real businesses —
-          from fintech dashboards to e-commerce platforms serving hundreds of clients.
+          I build production-grade web applications and APIs — from real-time voice
+          platforms to marketplace systems serving hundreds of clients.
         </motion.p>
 
         <motion.div

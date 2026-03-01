@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Expert Marketplace Platform",
     tech: ["Laravel", "Vue.js", "MySQL", "Redis", "Docker"],
     bullets: [
       "Maintained and extended a versioned REST API serving 500–1,000 active clients across a legacy Vue 2 and a modern Vue 3 frontend.",
@@ -12,6 +13,7 @@ const projects = [
     ],
   },
   {
+    title: "AI Voice Receptionist SaaS",
     tech: ["Next.js", "TypeScript", "Twilio", "WebSockets", "Docker"],
     bullets: [
       "Architected a multi-tenant AI voice SaaS with a split-service design, isolating a Next.js serverless app from a real-time voice bridge for reliable long-lived WebSocket handling.",
@@ -20,6 +22,7 @@ const projects = [
     ],
   },
   {
+    title: "Shipping Analytics Dashboard",
     tech: ["Laravel", "Vue 3", "MySQL", "Redis"],
     bullets: [
       "Sole developer — designed and built a decoupled Laravel REST API and Vue 3 SPA from scratch, processing 100+ orders daily.",
@@ -42,11 +45,11 @@ export default function Projects() {
         className="mb-12"
       >
         <div className="flex items-center gap-3 mb-4">
-          <span className="h-px w-8 bg-teal-400"></span>
+          <span className="h-px w-8 bg-teal-400" />
           <span className="text-teal-400 text-sm font-mono uppercase tracking-widest">
             What I&apos;ve Built
           </span>
-          <span className="h-px w-8 bg-teal-400"></span>
+          <span className="h-px w-8 bg-teal-400" />
         </div>
         <h2 className="text-3xl font-bold text-[#f1f5f9]">Projects</h2>
       </motion.div>
@@ -66,8 +69,13 @@ export default function Projects() {
               {cardNumbers[i]}
             </span>
 
+            {/* Project title */}
+            <h3 className="text-lg font-semibold text-white mb-3 pr-12">
+              {project.title}
+            </h3>
+
             {/* Tech badges */}
-            <div className="flex flex-wrap gap-2 mb-5 pr-10">
+            <div className="flex flex-wrap gap-2 mb-5">
               {project.tech.map((t) => (
                 <span
                   key={t}

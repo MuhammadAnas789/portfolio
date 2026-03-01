@@ -87,12 +87,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="w-8 h-px bg-[#2dd4bf]" />
-            <p className="text-[#2dd4bf] text-xs font-mono tracking-widest uppercase">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="h-px w-8 bg-teal-400" />
+            <span className="text-teal-400 text-sm font-mono uppercase tracking-widest">
               Get In Touch
-            </p>
-            <div className="w-8 h-px bg-[#2dd4bf]" />
+            </span>
+            <span className="h-px w-8 bg-teal-400" />
           </div>
           <h2 className="text-3xl font-bold text-[#f1f5f9] mb-4">Contact</h2>
           <p className="text-[#94a3b8] max-w-xl mx-auto">
@@ -158,7 +158,7 @@ export default function Contact() {
                   required
                   maxLength={100}
                   placeholder="Your name"
-                  className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-1 focus:ring-[#2dd4bf]/40 transition-all text-sm"
+                  className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-2 focus:ring-[#2dd4bf]/40 transition-all text-sm"
                 />
               </div>
               <div>
@@ -171,7 +171,7 @@ export default function Contact() {
                   required
                   maxLength={254}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-1 focus:ring-[#2dd4bf]/40 transition-all text-sm"
+                  className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-2 focus:ring-[#2dd4bf]/40 transition-all text-sm"
                 />
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                 maxLength={MESSAGE_MAX}
                 placeholder="Tell me about your project or opportunity..."
                 onChange={(e) => setMessageLength(e.target.value.length)}
-                className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-1 focus:ring-[#2dd4bf]/40 transition-all text-sm resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-2 focus:ring-[#2dd4bf]/40 transition-all text-sm resize-none"
               />
               <p
                 className={`text-xs text-right mt-1 transition-colors ${
@@ -216,7 +216,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isDisabled}
-              className="w-full py-3 rounded-lg bg-[#2dd4bf] text-[#0f172a] font-semibold hover:bg-[#2dd4bf]/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-[0_0_20px_-6px_#2dd4bf66]"
+              className="w-full sm:w-auto sm:px-8 py-3 rounded-lg bg-[#2dd4bf] text-[#0f172a] font-semibold hover:bg-[#2dd4bf]/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-[0_0_20px_-6px_#2dd4bf66]"
             >
               {status === "submitting" ? (
                 <span className="flex items-center justify-center gap-2">

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -35,19 +36,9 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <motion.p
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          className="text-[#2dd4bf] text-sm font-mono tracking-widest uppercase mb-4"
-        >
-          Hi, I&apos;m
-        </motion.p>
-
-        {/* Name with word-by-word reveal + blinking cursor */}
+        {/* Name with word-by-word reveal */}
         <div className="mb-4">
-          <h1 className="text-5xl sm:text-7xl font-bold text-[#f1f5f9] leading-tight inline-flex flex-wrap items-center justify-center gap-x-4">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold text-[#f1f5f9] leading-tight inline-flex flex-wrap items-center justify-center gap-x-4">
             <motion.span
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -65,8 +56,9 @@ export default function Hero() {
           </h1>
         </div>
 
+        {/* Title + blinking cursor */}
         <motion.h2
-          custom={0.2}
+          custom={0.45}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
@@ -76,14 +68,14 @@ export default function Hero() {
           <motion.span
             animate={{ opacity: [1, 1, 0, 0] }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear", times: [0, 0.5, 0.5, 1] }}
-            className="text-[#2dd4bf] font-light text-3xl"
+            className="text-[#2dd4bf] font-light"
           >
             |
           </motion.span>
         </motion.h2>
 
         <motion.p
-          custom={0.3}
+          custom={0.6}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
@@ -94,13 +86,13 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          custom={0.4}
+          custom={0.75}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          {/* Primary CTA */}
+          {/* Primary CTA — solid teal */}
           <a
             href="/resume.pdf"
             target="_blank"
@@ -109,29 +101,30 @@ export default function Hero() {
           >
             View Resume
           </a>
-          {/* Ghost CTA */}
+          {/* Secondary CTA — outlined teal */}
           <a
             href="#contact"
-            className="px-8 py-3 rounded-lg border border-[#2dd4bf]/40 text-[#f1f5f9] hover:border-[#2dd4bf] hover:text-[#2dd4bf] hover:bg-[#2dd4bf]/5 active:scale-95 transition-all duration-200"
+            className="px-8 py-3 rounded-lg border border-[#2dd4bf] text-[#2dd4bf] hover:bg-[#2dd4bf]/10 active:scale-95 transition-all duration-200"
           >
             Contact Me
           </a>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — bouncing chevron */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#94a3b8]/60"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#94a3b8]/60"
       >
         <span className="text-xs tracking-widest uppercase font-mono">Scroll</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-0.5 h-8 bg-gradient-to-b from-[#2dd4bf]/40 to-transparent rounded-full"
-        />
+        >
+          <ChevronDown className="w-5 h-5" />
+        </motion.div>
       </motion.div>
     </section>
   );

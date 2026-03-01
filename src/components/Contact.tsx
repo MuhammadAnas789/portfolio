@@ -1,19 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { Mail, Linkedin } from "lucide-react";
 
-const FORMSPREE_ID = "mgolqgjd";
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MESSAGE_MAX = 2000;
+const COOLDOWN_SECONDS = 60;
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [messageLength, setMessageLength] = useState(0);
+  const [cooldown, setCooldown] = useState(0);
+  const honeypotRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = setInterval(() => {
+      setCooldown((c) => {
+        if (c <= 1) {
+          clearInterval(timer);
+          return 0;
+        }
+        return c - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [cooldown]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("submitting");
+
+    // Honeypot — silently reject bots
+    if (honeypotRef.current?.value) return;
+
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const raw = new FormData(form);
+
+    const name = (raw.get("name") as string).trim();
+    const email = (raw.get("email") as string).trim();
+    const message = (raw.get("message") as string).trim();
+
+    // Client-side validation
+    if (!EMAIL_REGEX.test(email)) {
+      setStatus("error");
+      return;
+    }
+    if (message.length > MESSAGE_MAX) return;
+
+    const data = new FormData();
+    data.set("name", name);
+    data.set("email", email);
+    data.set("message", message);
+
+    setStatus("submitting");
 
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -24,6 +65,8 @@ export default function Contact() {
       if (res.ok) {
         setStatus("success");
         form.reset();
+        setMessageLength(0);
+        setCooldown(COOLDOWN_SECONDS);
       } else {
         setStatus("error");
       }
@@ -31,6 +74,8 @@ export default function Contact() {
       setStatus("error");
     }
   }
+
+  const isDisabled = status === "submitting" || cooldown > 0;
 
   return (
     <section id="contact" className="py-24 bg-[#1e293b]/30 border-t border-[#334155]/20">
@@ -91,6 +136,17 @@ export default function Contact() {
           className="bg-[#1e293b] rounded-xl border border-[#334155]/50 p-8"
         >
           <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Honeypot — hidden from real users, catches bots */}
+            <div style={{ position: "absolute", left: "-9999px" }} aria-hidden="true">
+              <input
+                ref={honeypotRef}
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
@@ -100,6 +156,7 @@ export default function Contact() {
                   type="text"
                   name="name"
                   required
+                  maxLength={100}
                   placeholder="Your name"
                   className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-1 focus:ring-[#2dd4bf]/40 transition-all text-sm"
                 />
@@ -112,6 +169,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   required
+                  maxLength={254}
                   placeholder="your@email.com"
                   className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-1 focus:ring-[#2dd4bf]/40 transition-all text-sm"
                 />
@@ -125,9 +183,18 @@ export default function Contact() {
                 name="message"
                 required
                 rows={5}
+                maxLength={MESSAGE_MAX}
                 placeholder="Tell me about your project or opportunity..."
+                onChange={(e) => setMessageLength(e.target.value.length)}
                 className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-1 focus:ring-[#2dd4bf]/40 transition-all text-sm resize-none"
               />
+              <p
+                className={`text-xs text-right mt-1 transition-colors ${
+                  messageLength > 1800 ? "text-red-400" : "text-[#94a3b8]/50"
+                }`}
+              >
+                {messageLength} / {MESSAGE_MAX}
+              </p>
             </div>
 
             {status === "success" && (
@@ -140,10 +207,15 @@ export default function Contact() {
                 Something went wrong. Please try emailing directly.
               </p>
             )}
+            {cooldown > 0 && (
+              <p className="text-[#94a3b8] text-sm text-center">
+                You can send another message in {cooldown}s
+              </p>
+            )}
 
             <button
               type="submit"
-              disabled={status === "submitting"}
+              disabled={isDisabled}
               className="w-full py-3 rounded-lg bg-[#2dd4bf] text-[#0f172a] font-semibold hover:bg-[#2dd4bf]/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200 shadow-[0_0_20px_-6px_#2dd4bf66]"
             >
               {status === "submitting" ? (

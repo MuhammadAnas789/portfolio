@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Muhammad Anas",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://manas-engineer.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Muhammad Anas — Software Engineer",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Muhammad Anas — Software Engineer",
     description:
       "Full-stack engineer with production experience across Laravel, Vue.js, and Next.js. Building scalable APIs, real-time systems, and complete frontend applications.",
-    images: ["/og-image.png"],
+    images: ["https://manas-engineer.vercel.app/og-image.png"],
   },
 };
 

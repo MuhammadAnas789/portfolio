@@ -111,7 +111,7 @@ export const metadata: Metadata = {
   // 5. Replace GOOGLE_VERIFICATION_TOKEN below with that value
   // 6. Deploy and click Verify in Search Console
   verification: {
-    google: "GOOGLE_VERIFICATION_TOKEN",
+    google: "Hakrik_gAgsXcFxF-7NY65QhelqHJ4liTmA0BjvJFsM",
   },
 };
 

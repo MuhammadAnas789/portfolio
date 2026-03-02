@@ -149,26 +149,30 @@ export default function Contact() {
 
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
+                <label htmlFor="name" className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
                   Name
                 </label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
                   required
+                  aria-required="true"
                   maxLength={100}
                   placeholder="Your name"
                   className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-2 focus:ring-[#2dd4bf]/40 transition-all text-sm"
                 />
               </div>
               <div>
-                <label className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
+                <label htmlFor="email" className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
                   Email
                 </label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   required
+                  aria-required="true"
                   maxLength={254}
                   placeholder="your@email.com"
                   className="w-full px-4 py-3 rounded-lg bg-[#0f172a] border border-[#334155]/60 text-[#f1f5f9] placeholder-[#334155] focus:outline-none focus:border-[#2dd4bf]/60 focus:ring-2 focus:ring-[#2dd4bf]/40 transition-all text-sm"
@@ -176,12 +180,14 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <label className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
+              <label htmlFor="message" className="block text-xs font-mono text-[#94a3b8] uppercase tracking-wider mb-2">
                 Message
               </label>
               <textarea
+                id="message"
                 name="message"
                 required
+                aria-required="true"
                 rows={5}
                 maxLength={MESSAGE_MAX}
                 placeholder="Tell me about your project or opportunity..."

@@ -13,14 +13,23 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://manas-engineer.vercel.app"),
 
   title: {
-    default: "Muhammad Anas — Software Engineer | Laravel, Next.js, Vue.js",
+    default:
+      "Muhammad Anas — AI Voice & Backend Engineer | Twilio, ElevenLabs, Laravel",
     template: "%s | Muhammad Anas",
   },
 
   description:
-    "Muhammad Anas is a Software Engineer based in Lahore, Pakistan, specializing in Laravel, Next.js, Vue.js, TypeScript, and full-stack web development. Available for new opportunities.",
+    "Muhammad Anas builds production AI voice systems on Twilio and ElevenLabs — real-time voice bridges, warm transfers, and idempotent post-call pipelines — plus Laravel and Next.js backends. Based in Lahore, Pakistan.",
 
   keywords: [
+    "AI voice agent developer",
+    "Twilio developer",
+    "ElevenLabs developer",
+    "conversational AI engineer",
+    "voice AI backend",
+    "AI receptionist developer",
+    "real-time voice infrastructure",
+    "VoIP engineer",
     "Muhammad Anas",
     "Muhammad Anas software engineer",
     "Muhammad Anas developer",
@@ -80,25 +89,27 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://manas-engineer.vercel.app",
-    siteName: "Muhammad Anas — Software Engineer",
-    title: "Muhammad Anas — Software Engineer | Laravel, Next.js, Vue.js",
+    siteName: "Muhammad Anas — AI Voice & Backend Engineer",
+    title:
+      "Muhammad Anas — AI Voice & Backend Engineer | Twilio, ElevenLabs, Laravel",
     description:
-      "Software Engineer specializing in Laravel, Next.js, Vue.js, and TypeScript. Building production-grade web applications and APIs.",
+      "Production AI voice systems on Twilio and ElevenLabs — real-time voice bridges, warm transfers, idempotent post-call pipelines — plus Laravel and Next.js backends.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Muhammad Anas — Software Engineer",
+        alt: "Muhammad Anas — AI Voice & Backend Engineer",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Anas — Software Engineer | Laravel, Next.js, Vue.js",
+    title:
+      "Muhammad Anas — AI Voice & Backend Engineer | Twilio, ElevenLabs, Laravel",
     description:
-      "Software Engineer specializing in Laravel, Next.js, Vue.js, and TypeScript. Building production-grade web applications and APIs.",
+      "Production AI voice systems on Twilio and ElevenLabs — real-time voice bridges, warm transfers, idempotent post-call pipelines — plus Laravel and Next.js backends.",
     images: ["/og-image.png"],
     creator: "@muhammadanas",
   },

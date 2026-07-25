@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "AI Voice Receptionist SaaS",
+    tech: ["Next.js", "TypeScript", "Twilio", "ElevenLabs", "WebSockets"],
+    bullets: [
+      "Architected a multi-tenant AI voice SaaS with a split-service design, isolating a Next.js serverless app from a real-time voice bridge for reliable long-lived WebSocket handling.",
+      "Owned the voice bridge end-to-end: AI calls, warm transfers, per-call configuration, and fault-tolerant transcript delivery.",
+      "Built 35+ REST API handlers in TypeScript, a durable job queue, and a post-call pipeline covering summarization, notifications, and idempotency.",
+    ],
+  },
+  {
     title: "Expert Marketplace Platform",
     tech: ["Laravel", "Vue.js", "MySQL", "Redis", "Docker"],
     bullets: [
       "Maintained and extended a versioned REST API serving 500–1,000 active clients across a legacy Vue 2 and a modern Vue 3 frontend.",
       "Resolved a production performance bottleneck by optimizing database placement, resulting in measurable API response improvement and positive client feedback.",
       "Implemented WebSocket-based real-time chat and integrated Stripe, AWS S3, and Postmark within a role-scoped domain architecture.",
-    ],
-  },
-  {
-    title: "AI Voice Receptionist SaaS",
-    tech: ["Next.js", "TypeScript", "Twilio", "WebSockets", "Docker"],
-    bullets: [
-      "Architected a multi-tenant AI voice SaaS with a split-service design, isolating a Next.js serverless app from a real-time voice bridge for reliable long-lived WebSocket handling.",
-      "Owned the voice bridge end-to-end: AI calls, warm transfers, per-call configuration, and fault-tolerant transcript delivery.",
-      "Built 35+ REST API handlers in TypeScript, a durable job queue, and a post-call pipeline covering summarization, notifications, and idempotency.",
     ],
   },
   {

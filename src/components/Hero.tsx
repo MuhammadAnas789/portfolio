@@ -64,7 +64,7 @@ export default function Hero() {
           variants={fadeUp}
           className="text-2xl sm:text-3xl font-semibold text-[#2dd4bf] mb-6 flex items-center justify-center gap-2"
         >
-          <span>Full-Stack Software Engineer</span>
+          <span>AI Voice &amp; Backend Engineer</span>
           <motion.span
             animate={{ opacity: [1, 1, 0, 0] }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear", times: [0, 0.5, 0.5, 1] }}

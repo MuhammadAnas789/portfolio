@@ -94,14 +94,7 @@ export const metadata: Metadata = {
       "Muhammad Anas — AI Voice & Backend Engineer | Twilio, ElevenLabs, Laravel",
     description:
       "Production AI voice systems on Twilio and ElevenLabs — real-time voice bridges, warm transfers, idempotent post-call pipelines — plus Laravel and Next.js backends.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Muhammad Anas — AI Voice & Backend Engineer",
-      },
-    ],
+    // Image comes from src/app/opengraph-image.tsx (Next.js file convention)
   },
 
   twitter: {
@@ -110,7 +103,6 @@ export const metadata: Metadata = {
       "Muhammad Anas — AI Voice & Backend Engineer | Twilio, ElevenLabs, Laravel",
     description:
       "Production AI voice systems on Twilio and ElevenLabs — real-time voice bridges, warm transfers, idempotent post-call pipelines — plus Laravel and Next.js backends.",
-    images: ["/og-image.png"],
     creator: "@muhammadanas",
   },
 

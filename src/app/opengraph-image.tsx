@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Muhammad Anas — Software Engineer";
+export const alt = "Muhammad Anas — AI Voice & Backend Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -48,7 +48,7 @@ export default async function Image() {
             fontWeight: 600,
           }}
         >
-          Software Engineer
+          AI Voice &amp; Backend Engineer
         </div>
         <div
           style={{
@@ -57,7 +57,7 @@ export default async function Image() {
             letterSpacing: "1px",
           }}
         >
-          Laravel · Next.js · Vue.js · TypeScript
+          Twilio · ElevenLabs · Laravel · Next.js
         </div>
         {/* Bottom domain */}
         <div
